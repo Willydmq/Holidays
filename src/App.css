@@ -1,3 +1,9 @@
+html {
+  background-color: #418ca3 !important;
+  filter: contrast(100%) sepia(0%) !important;
+  -webkit-filter: contrast(100%) sepia(0%) !important;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
