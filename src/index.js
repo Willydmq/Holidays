@@ -1,10 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+const express = require("express");
+const server = express();
+const routes = require("./routes");
+const PORT = 4000;
+const { initDB } = require("./services/db");
+const cors = require("cors");
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+server.use(cors());
+server.use(express.json());
+
+server.get("/", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "true");
+  res.send("Api is running...");
+});
+
+//routes
+server.use("/api", routes);
+
+server.listen(PORT, () => {
+  initDB();
+  console.log(`el servidor esta escuchando en el puerto: ${PORT}`);
+});
