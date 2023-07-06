@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:4000/api";
+const url = "https://holidays-aez8.onrender.com/api";
 
 export const getTodos = async () => {
   try {
