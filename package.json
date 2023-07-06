@@ -2,6 +2,7 @@
   "name": "tesseract-frontend",
   "version": "0.1.0",
   "private": false,
+  "proxy": "https://holidays-aez8.onrender.com",
   "description": "Core Code's ToDos app frontend",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
