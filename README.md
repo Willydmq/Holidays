@@ -41,6 +41,7 @@
 
 <div style="text-align: center; padding: 10px;">
     <img src="./src/img/express.png" width="100px">
+    <img src="./src/img/mysql.png" width="100px">
 </div>
 
 ## Autores ✒️
