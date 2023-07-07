@@ -4,15 +4,27 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 function TodoList() {
+  const [error, setError] = useState(null);
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const todosData = await getTodos();
-      setTodos(todosData);
+      try {
+        const todosData = await getTodos();
+        setTodos(todosData);
+      } catch (error) {
+        console.log(error);
+        setError(error.message);
+      }
     };
     fetchData();
   }, []);
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  // Resto del código aquí
 
   return (
     <>

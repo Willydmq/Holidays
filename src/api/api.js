@@ -7,7 +7,10 @@ export const getTodos = async () => {
     const response = await axios.get(`${url}`);
     return response.data.data;
   } catch (error) {
-    console.log(error);
+    console.log("Error al obtener la lista de tareas:", error);
+    throw new Error(
+      "No se pudo obtener la lista de tareas. Por favor, intenta de nuevo más tarde."
+    );
   }
 };
 
